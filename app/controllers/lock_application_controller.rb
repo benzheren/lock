@@ -8,7 +8,7 @@ module LockApplicationController
   module InstanceMethods
     def lock_filter(actions=nil)
       if locked_action?(actions) and session[:lock_opened]!=true
-        redirect_to unlock_refused_url
+        redirect_to lock_login_url
       end
       #otherwise proceed to where ya going
     end
